@@ -1,0 +1,144 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+body {
+  // background-image: $rainbow;
+  @include bodyColor;
+  @include flexBox1;
+  @include center;
+  height: 100vh;
+  width: 100%;
+  font-family: $primary-font;
+}
+
+.wrapper {
+  @include frame;
+  .navbar {
+    @include flexBox2;
+    @include center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    img {
+      @include logo;
+    }
+
+    .name {
+      @include flexBox2;
+      @include center;
+      gap: 8px;
+    }
+
+    .links {
+      @include flexBox2;
+      @include center;
+      gap: 30px;
+      div {
+        @include flexBox2;
+        @include center;
+
+        gap: 5px;
+
+        img {
+          width: 15px;
+        }
+      }
+      a {
+        text-decoration: none;
+        padding: 10px 2px;
+        color: #2c2b2b;
+      }
+      div:hover {
+        background-color: #d4d4fa;
+        border-radius: 20px;
+      }
+    }
+  }
+  .about {
+    @include flexBox2;
+    margin: 50px 100px;
+
+    .profileImage {
+      width: 30%;
+      margin-right: 40px;
+      border-radius: 50%;
+      border: 2px solid #8a2be2;
+    }
+    .info {
+      margin-top: 30px;
+
+      p {
+        @include paragraphes;
+      }
+    }
+  }
+  .footer {
+    @include flexBox2;
+    @include center;
+    margin: 100px;
+    .career {
+      p {
+        @include paragraphes;
+      }
+    }
+    .skills {
+      button {
+        @include buttons;
+        @include zoom;
+      }
+    }
+  }
+}
+.container {
+  @include flexBox2;
+  @include frame;
+  gap: 150px;
+
+  .left {
+    @include stripes;
+    @include flexBox1;
+    border-radius: 10px;
+    padding: 50px;
+
+    .back {
+      @include zoom;
+      width: 2rem;
+      justify-content: flex-start;
+      background-color: #9addf1;
+      border-radius: 50%;
+    }
+
+    .logo {
+      align-self: center;
+      height: 20rem;
+      width: 20rem;
+      background-color: $primary-color;
+      border-radius: 50%;
+    }
+  }
+  .contactInfo {
+    @include flexBox1;
+    gap: 50px;
+    padding: 150px 0px 200px 0px;
+    a {
+      text-decoration: none;
+      color: $secondary-color;
+    }
+    img {
+      @include logo;
+    }
+    .myName {
+      color: #39004b;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #9addf1;
+    }
+    .mobile,
+    .gmail,
+    .location,
+    .github {
+      @include infoStyle;
+    }
+  }
+}

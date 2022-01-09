@@ -1,0 +1,112 @@
+@mixin flexBox1 {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flexBox2 {
+  display: flex;
+  flex-direction: row;
+}
+@mixin center {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin paragraphes {
+  width: 80%;
+  margin-top: 10px;
+  text-align: justify;
+  color: gray;
+  font-size: 15px;
+}
+@mixin logo {
+  width: 20px;
+}
+
+@mixin buttons {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 2px;
+  border: 2px solid #8a2be2;
+  // &:hover {
+  //   background-color: #d4d9db;
+  // }
+}
+@mixin frame {
+  background-color: $primary-color;
+  width: 70%;
+  border-radius: 10px;
+  margin-top: 50px;
+  border: 1px solid #8a2be2;
+}
+
+@mixin bodyColor {
+  background: linear-gradient(
+    to right bottom,
+    #6f71e2,
+    #00c3ff,
+    #97abe8,
+    #cc8dce,
+    #e960c7c2,
+    #a60d5d
+  );
+  background-size: 600% 600%;
+
+  -webkit-animation: animatedBody 20s ease infinite;
+  -moz-animation: animatedBody 20s ease infinite;
+  animation: animatedBody 20s ease infinite;
+}
+
+@-webkit-keyframes animatedBody {
+  0% {
+    background-position: 87% 0%;
+  }
+  50% {
+    background-position: 14% 100%;
+  }
+  100% {
+    background-position: 87% 0%;
+  }
+}
+@-moz-keyframes animatedBody {
+  0% {
+    background-position: 87% 0%;
+  }
+  50% {
+    background-position: 14% 100%;
+  }
+  100% {
+    background-position: 87% 0%;
+  }
+}
+@keyframes animatedBody {
+  0% {
+    background-position: 87% 0%;
+  }
+  50% {
+    background-position: 14% 100%;
+  }
+  100% {
+    background-position: 87% 0%;
+  }
+}
+
+@mixin zoom {
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@mixin stripes {
+  background: repeating-linear-gradient(-45deg, #fff, #f7f7fd 8px);
+}
+
+@mixin infoStyle {
+  @include flexBox2;
+  @include zoom;
+  gap: 10px;
+}
